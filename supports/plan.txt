@@ -1,0 +1,66 @@
+3) Autre usecase : la stack ELK (30 min) by Vickrame & Vincent
+Présentation de l'objectif des autres produits
+Démo avec docker run elastic, logstash, kibana, une appli apache/spring et hop on visualise des données.
+On aurait pu aussi montrer du spark over elastic ou autre chose
+
+1- Présentation de la stach ELK
+	Parmi les produits de la stack ES, on y trouve
+		Elastic-Hadoop
+		Marvel
+		Shield
+		Beat
+		Watcher
+	Et plus particulierement 
+		Logstash
+		Kibana
+
+2- Un gadget non un redoutable couteau suisse
+	qui l'utilse ?
+		netflix
+		github
+		google
+		...
+	Pourquoi ?
+		architecture micro service
+			de + en + de logs
+			besoin de trouver l'information rapidement
+			
+3- Use case ELK
+	Fonctionnement Logstash
+		Objectif
+			- collecter
+			- analyser
+			- stocker
+		Fonctionnement
+			s'appuie sur un système de plugin (input, filtre, output)
+			prendre les graph suivant
+				https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html
+				
+		Exemple de parsing log Applicatif Java
+			Exemple sur 5 applications Java
+				Spring-Zuul-Server
+				Spring-Eureka-Server
+				Spring-Hystric-Server
+				Annuaire-Personne
+				Annuaire-Taxi				
+			=> montrer qu'on peut cloisonner les logs applicatifs 	
+		Exemple de parsing Message dans RabbitMQ
+		Exemple de parsing fichier texte
+			=> montrer qu'on est capable de
+				- construire ses propres pattern (car dans la vraie vie on rajoute toujours sur couche sur les standard)
+		Conclusion
+			- ne sert à rien de réinventer la roue des patterns existent
+			- si besoin on peut créer ses propres filtres
+			
+	Transition :
+		Comment peut-on requeter les données dans ES ?
+			curl
+			elastichead
+		=> pas très userfrendly 
+		Comment présenter les resultats?
+			besoin d'un outil : Kibana
+			
+	Présentation du DashBoard Kibana
+		Exemple de requete (nombre de succes, nombre d'erreur)
+
+	
