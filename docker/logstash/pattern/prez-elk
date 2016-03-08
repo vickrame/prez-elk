@@ -1,0 +1,9 @@
+TOMCAT_DATESTAMP2 20%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:?%{MINUTE}(?::?%{SECOND})
+LOGLEVEL ([Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|INFO|[Ww]arn?(?:ing)?|WARN?(?:ING)?|[Ee]rr?(?:or)?|ERR?(?:OR)?|[Cc]rit?(?:ical)?|CRIT?(?:ICAL)?|[Ff]atal|FATAL|[Ss]evere|SEVERE|EMERG(?:ENCY)?|[Ee]merg(?:ency)?)
+TOMCAT_BLANC \s*
+BRTT \[
+FBR \]
+TRUC (.*)
+TRUC_2POINT :
+
+SPRINGBOOT %{TOMCAT_DATESTAMP2:date}%{TOMCAT_BLANC}%{LOGLEVEL:niveau}%{TOMCAT_BLANC}%{NUMBER:thread}%{TOMCAT_BLANC}%{TRUC}%{BRTT}%{TOMCAT_BLANC}%{TRUC:classe}%{FBR}%{TOMCAT_BLANC}%{JAVACLASS:class}%{TOMCAT_BLANC}%{JAVALOGMESSAGE:log_message}
